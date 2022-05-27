@@ -12,5 +12,5 @@
 
 ### Other Command list
 - `readelf` - display information about ELF files
-    - `readelf -h /bin/bash`
+    - E.g.: `readelf -h /bin/bash`
 - `size` - list section sizes and total size of binary files

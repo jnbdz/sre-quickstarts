@@ -1,4 +1,11 @@
 # Linux | SRE | Quickstarts
+## Setup
+### Kali
+You can quickly install useful packages for SRE in Kali: 
+```bash
+sudo apt install kali-tools-reverse-engineering
+```
+**Source:** https://www.kali.org/tools/kali-meta/#kali-tools-reverse-engineering
 ## Command list
 - `file` — determine file type
 - `Tika` [Apache Tika](https://tika.apache.org/) (alternative to `file` command (more powerful)) toolkit detects and extracts metadata and text from over a thousand different file types (such as PPT, XLS, and PDF).
@@ -8,6 +15,8 @@
 - `otool` - object file displaying tool
 - `c++filt` - demangle C++ and Java symbols
 - `strings` - print the sequences of printable characters in files
+- [`jadx`](https://github.com/skylot/jadx) - Dex to Java decompiler (in Kali: `sudo apt install jadx`)
+- [`d2j-dex2jar`](https://github.com/pxb1988/dex2jar/tree/2.x) - Tools to work with android .dex and java .class files
 - `ghidra` - ([Website](https://ghidra-sre.org/), [GitHub](https://github.com/NationalSecurityAgency/ghidra)) reverse engineering tool developed by the National Security Agency (NSA)
 
 ### Other Command list

@@ -6,9 +6,11 @@ You can quickly install useful packages for SRE in Kali:
 sudo apt install kali-tools-reverse-engineering
 ```
 **Source:** https://www.kali.org/tools/kali-meta/#kali-tools-reverse-engineering
+> **NOTE:** If you click on *Dependencies* you can see all the packages that will be installed.
 ## Command list
 - `file` — determine file type
 - `Tika` [Apache Tika](https://tika.apache.org/) (alternative to `file` command (more powerful)) toolkit detects and extracts metadata and text from over a thousand different file types (such as PPT, XLS, and PDF).
+- `POI` [Apache POI](https://poi.apache.org/) Java API for Microsoft Documents (`Tika` uses Apache POI)
 - `nm` - list symbols from object files
 - `ldd` - print shared object dependencies
 - `objdump` - display information from object files

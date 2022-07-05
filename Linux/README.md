@@ -26,6 +26,7 @@ sudo apt install kali-tools-reverse-engineering
 - `file` — determine file type
 - `Tika` [Apache Tika](https://tika.apache.org/) (alternative to `file` command (more powerful)) toolkit detects and extracts metadata and text from over a thousand different file types (such as PPT, XLS, and PDF).
 - `POI` [Apache POI](https://poi.apache.org/) Java API for Microsoft Documents (`Tika` uses Apache POI)
+- `gst-typefind-1.0` [gst-typefind-1.0 - man pages section 1: User Commands | docs.oracle.com](https://docs.oracle.com/cd/E88353_01/html/E37839/gst-typefind-1-0-1.html) - Tool from GStreamer.
 - `nm` - list symbols from object files
 - `ldd` - print shared object dependencies
 - `objdump` - display information from object files

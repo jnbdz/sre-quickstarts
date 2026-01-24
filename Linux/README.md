@@ -41,6 +41,7 @@ sudo apt install kali-tools-reverse-engineering
 - [`jadx`](https://github.com/skylot/jadx) - Dex to Java decompiler (in Kali: `sudo apt install jadx`)
 - [`d2j-dex2jar`](https://github.com/pxb1988/dex2jar/tree/2.x) - Tools to work with android .dex and java .class files
 - `ghidra` - ([Website](https://ghidra-sre.org/), [GitHub](https://github.com/NationalSecurityAgency/ghidra)) reverse engineering tool developed by the National Security Agency (NSA)
+- `gef` -  Command refers to GEF (GDB Enhanced Features), which is a powerful plugin for the GNU Debugger (GDB) used by exploit developers and reverse engineers to simplify dynamic analysis and provide better visualization and extra features during debugging sessions. It is not a standalone command-line tool, but a set of commands used within the GDB environment
 
 ## Trace tools
 These four tools are the "eyes" into how a Linux system operates, each focusing on a different layer of the stack—from user applications down into the deep kernel.

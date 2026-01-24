@@ -42,6 +42,36 @@ sudo apt install kali-tools-reverse-engineering
 - [`d2j-dex2jar`](https://github.com/pxb1988/dex2jar/tree/2.x) - Tools to work with android .dex and java .class files
 - `ghidra` - ([Website](https://ghidra-sre.org/), [GitHub](https://github.com/NationalSecurityAgency/ghidra)) reverse engineering tool developed by the National Security Agency (NSA)
 
+## Trace tools
+These four tools are the "eyes" into how a Linux system operates, each focusing on a different layer of the stack—from user applications down into the deep kernel.
+ 
+| Tool     | Focus Area      | Key Purpose                                                                          | Performance Overhead |
+|----------|-----------------|--------------------------------------------------------------------------------------|----------------------|
+| `ptrace` | Process Control | The foundation for debuggers (like GDB); allows one process to control another.      | Very High            |
+| `strace` | System Calls    | Traces the boundary between a program and the Kernel (opening files, network, etc.). | High                 |
+| `ltrace` | Library Calls   | Traces calls to shared libraries (e.g., malloc, printf, strcpy).                     | High                 |
+| `ftrace` | Kernel Logic    | Traces what is happening inside the Kernel itself (scheduler, drivers, etc.).        | Low                  |
+
+1. `ptrace` (Process Trace) 
+    - **What it is:** A system call, not a standalone tool.
+    - **Function:** It is the underlying engine that makes strace, ltrace, and GDB possible.
+    - **Capability:** It allows a "tracer" process to observe and control the execution of a "tracee," including reading and writing its memory and registers. 
+
+2. `strace` (System Call Trace)
+    - **Usage:** Best for "Why won't this app start?" or "Where is it looking for this config file?".
+    - **How it works:** It uses ptrace to stop the program every time it makes a request to the kernel (a system call).
+    - **Trade-off:** It is notoriously slow and can significantly degrade production performance. 
+
+3. `ltrace` (Library Trace)
+    - **Usage:** Best for understanding internal application logic or debugging specific library behavior.
+    - **Function:** It intercepts calls to shared libraries like glibc. Unlike strace, it won't show internal kernel actions, but it can be configured to show system calls as well using the -S flag.
+    - **Limitation:** It typically cannot trace calls to statically linked libraries. 
+
+4. `ftrace` (Function Tracer)
+    - **Usage:** Best for kernel developers or performance engineers diagnosing latency inside the OS.
+    - **How it works:** It is built directly into the Linux kernel and uses a virtual file system (often at /sys/kernel/tracing/) for configuration.
+    - **Advantage:** Because it is kernel-native, it has much lower overhead than strace and can trace almost any function within the kernel. 
+
 ### Other Command list
 - `readelf` - display information about ELF files
     - E.g.: `readelf -h /bin/bash`
